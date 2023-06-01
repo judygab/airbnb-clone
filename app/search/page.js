@@ -1,5 +1,12 @@
-export default function Page() {
+import { ResultsList } from "./results/ResultsList";
+
+export default async function Page() {
+    const res = await fetch('http://localhost:3000/api/search');
+    const data = await res.json();
+
     return (
-        <h1>My Page</h1>
+        <>
+            <ResultsList data={data} />
+        </>
     );
 }
