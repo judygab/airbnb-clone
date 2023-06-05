@@ -168,6 +168,7 @@ export default function Header() {
               </div>
             </motion.button>
           </div>
+          {/**Mobile Nav */}
           <div className={userIconClasses}>
             <Image src="/images/user.svg" height={30} width={30} alt="User" />
           </div>
