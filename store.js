@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-const initialState = {
+export const initialState = {
     location: "",
     dates: [new Date(), new Date()],
     guests: 0,
