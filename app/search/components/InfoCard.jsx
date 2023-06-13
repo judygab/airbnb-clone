@@ -12,7 +12,7 @@ const InfoCard = ({ listing }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto shadow-md rounded-lg overflow-hidden relative">
+    <div className="md:max-w-md md:mx-auto shadow-md rounded-lg overflow-hidden relative">
       <img
         src={listing.image}
         alt={listing.name}
@@ -26,7 +26,7 @@ const InfoCard = ({ listing }) => {
             <span className="text-gray-800">{listing.rating}</span>
           </div>
         </div>
-        <p className="text-gray-600 mb-4">{listing.description}</p>
+        <p className="text-gray-600 mb-6">{listing.description}</p>
         <button
           onClick={handleFavoriteUpdate}
           className="absolute bottom-4 right-4 p-2 z-30"

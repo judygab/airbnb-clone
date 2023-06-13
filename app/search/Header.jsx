@@ -7,6 +7,7 @@ import { useClickAway } from "react-use";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSearchStore, initialState } from "../../store";
+import MobileNav from "./components/MobileNav";
 
 export default function Header() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -74,7 +75,7 @@ export default function Header() {
     }
   );
 
-  const userIconClasses = clsx("text-slate-600 flex", {
+  const userIconClasses = clsx("text-slate-600 hidden md:flex", {
     "items-center": !isExpanded,
     "items-start": isExpanded,
   });
@@ -122,10 +123,10 @@ export default function Header() {
     <>
       <header ref={ref} className="flex border-b bg-white z-50 fixed w-full">
         <div className={headerContainerClasses}>
-          <div className="text-red-500">
+          <div className="text-red-500 hidden md:block">
             <Image src="/images/logo.png" height={50} width={172} alt="Logo" />
           </div>
-          <div className="flex flex-col grow">
+          <div className="hidden md:flex flex-col grow">
             <motion.div
               className="flex flex-col justify-center"
               variants={tabVariants}
@@ -169,6 +170,9 @@ export default function Header() {
             </motion.button>
           </div>
           {/**Mobile Nav */}
+          <div className="md:hidden flex-grow">
+            <MobileNav />
+          </div>
           <div className={userIconClasses}>
             <Image src="/images/user.svg" height={30} width={30} alt="User" />
           </div>

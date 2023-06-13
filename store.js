@@ -10,5 +10,5 @@ export const useSearchStore = create((set) => ({
   ...initialState, 
   increaseGuests: () => set((state) => ({ guests: state.guests + 1 })),
   decreaseGuests: () => set((state) => ({ guests: state.guests - 1 })),
-  removeAllFilters: () => set(initalState),
+  removeAllFilters: () => set(initialState),
 }))
